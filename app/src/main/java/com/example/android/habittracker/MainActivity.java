@@ -41,8 +41,7 @@ public class MainActivity extends AppCompatActivity {
         displayDb();
     }
 
-    private void displayDb() {
-
+    private Cursor cursorMethod() {
         SQLiteDatabase db = mRunningDbHelper.getReadableDatabase();
 
         String[] projection = {
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 RunningEntry.COLUMN_TIME
         };
 
-        Cursor cursor = db.query(
+        return db.query(
                 RunningEntry.TABLE_NAME,
                 projection,
                 null,
@@ -61,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 null,
                 null
         );
+    }
+
+    private void displayDb() {
+        Cursor cursor = cursorMethod();
 
         TextView displayView = (TextView) findViewById(R.id.text_view_records);
 
