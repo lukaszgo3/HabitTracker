@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HabitTracker</string>
+    <string name="errorSaving">Error with saving record</string>
+    <string name="recordSaved">Record saved</string>
 </resources>

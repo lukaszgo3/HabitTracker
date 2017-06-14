@@ -63,11 +63,11 @@ public class EditActivity extends AppCompatActivity {
         long rowId = sqlDb.insert(RunningEntry.TABLE_NAME, null, contentValues);
 
         if (rowId == -1) {
-            Toast.makeText(this, "Error with saving record", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.errorSaving, Toast.LENGTH_SHORT).show();
         } else {
-
-            Toast.makeText(this, "Record saved with row id: " + rowId, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.recordSaved, Toast.LENGTH_SHORT).show();
         }
+
     }
 
     @Override
